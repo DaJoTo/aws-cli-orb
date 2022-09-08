@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 PARAM_ROLE_SESSION_NAME=$(eval echo "${PARAM_ROLE_SESSION_NAME}")
 PARAM_AWS_CLI_ROLE_ARN=$(eval echo "${PARAM_AWS_CLI_ROLE_ARN}")
 
@@ -29,7 +31,7 @@ EOF
 if [ -z "${AWS_ACCESS_KEY_ID}" ] || [ -z "${AWS_SECRET_ACCESS_KEY}" ] || [ -z "${AWS_SESSION_TOKEN}" ]; then
     echo "Failed to assume role";
     exit 1
-else 
+else
     {
         echo "export AWS_ACCESS_KEY_ID=\"${AWS_ACCESS_KEY_ID}\""
         echo "export AWS_SECRET_ACCESS_KEY=\"${AWS_SECRET_ACCESS_KEY}\""
